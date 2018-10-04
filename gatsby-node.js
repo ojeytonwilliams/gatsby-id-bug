@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
           ) {
             edges {
               node {
+                id
                 fields {
                   slug
                 }
@@ -45,6 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
             slug: edge.node.fields.slug,
             highlight: edge.node.frontmatter.highlight,
             shadow: edge.node.frontmatter.shadow,
+            id: edge.node.id,
           },
         })
       })
